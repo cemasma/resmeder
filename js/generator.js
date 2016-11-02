@@ -5,14 +5,14 @@ var GraphGenerator = (function (text) {
     const SQUARE_SIZE = 23;
 
     var textToColor = function (text) {
-        var rgb = [];
-        for (var i = 0; i < 3; i++) {
+        var rgb = [0, 0, 0];
+        for (var i = 0; i < text.length; i++) {
             if (text.charCodeAt(i) * text.charCodeAt((i != (text.length - 1) ? (i + 1) : i)) < 256) {
-                rgb.push(text.charCodeAt(i) * text.charCodeAt(i + 1));
+                rgb[i] = text.charCodeAt(i) * text.charCodeAt((i != (text.length - 1) ? (i + 1) : i));
             } else if (text.charCodeAt(i) < 256) {
-                rgb.push(text.charCodeAt(i) % 100 + 50);
+                rgb[i] = text.charCodeAt(i) % 100 + 50;
             } else {
-                rgb.push(text.charCodeAt(i) < 154) ? (text.charCodeAt(i) % 50 + text.charCodeAt(i)) : (text.charCodeAt(i) % 100 + text.charCodeAt(i) % 10)
+                rgb[i] = (text.charCodeAt(i) < 154) ? (text.charCodeAt(i) % 50 + text.charCodeAt(i)) : (text.charCodeAt(i) % 100 + text.charCodeAt(i) % 10)
             }
         }
         return "rgb(" + rgb[0] + ", " + rgb[1] + ", " + rgb[2] + ")";
