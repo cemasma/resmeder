@@ -2,4 +2,4 @@
 
 Unique avatar generator by name
 
-Demonstration: cemasma.github.io/resmeder
+Demo: [cemasma.github.io/resmeder](https://cemasma.github.io/resmeder)
