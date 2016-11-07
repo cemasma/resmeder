@@ -45,7 +45,7 @@ var GraphGenerator = (function (text) {
     }
 
     var getSpace = function (sum, modNum) {
-        return (sum % modNum == 0) ? sum % 3 : 0;
+        return (sum % modNum == 0) ? sum % 2 : 0;
     }
 
     var getColumn = function (sum, modNum) {
